@@ -1,7 +1,7 @@
-MVC Entity Framework èˆ‡ Stored Procedure - Insert, Update, Deleteç¶€ç¿’
+MVC Entity Framework »P Stored Procedure - Insert, Update, DeleteßY²ß
 ==================================================================
 
-##ä½¿ç”¨å·¥å…·
+##¨Ï¥Î¤u¨ã
 ------
 
 *   Visual Studio 2017
@@ -10,62 +10,69 @@ MVC Entity Framework èˆ‡ Stored Procedure - Insert, Update, Deleteç¶€ç¿’
 *   Entity Framework
 *   Bootstrap
 
-##ç³»çµ±æ“·åœ–
+##¨t²ÎÂ^¹Ï
 ------
 
-ä¾éƒ¨é–€è®€å–å“¡å·¥è³‡æ–™
+¨Ì³¡ªùÅª¨ú­û¤u¸ê®Æ
 =========
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/1_Employee_List.jpg)
 
-å“¡å·¥æ–°å¢
+­û¤u·s¼W
 ====
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/2_Employee_Create.jpg)
 
-å“¡å·¥ç·¨è¼¯
+­û¤u½s¿è
 ====
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/2_Employee_Edit.jpg)
 
-è³‡æ–™åº«å°ˆæ¡ˆ
+¸ê®Æ®w±M®×
 =====
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/501_Database_1.jpg)
 
-è®€å–æ‰€æœ‰éƒ¨é–€è³‡æ–™ï¼šusp\_GetAllDepartment
+Åª¨ú©Ò¦³³¡ªù¸ê®Æ¡Gusp\_GetAllDepartment
 ==============================
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/601_sp_1_usp_GetAllDepartment.jpg)
 
-ä¾éƒ¨é–€ç·¨è™Ÿè®€å–å“¡å·¥è³‡æ–™ï¼šusp\_GetEmployeeByDepId
+¨Ì³¡ªù½s¸¹Åª¨ú­û¤u¸ê®Æ¡Gusp\_GetEmployeeByDepId
 ===================================
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/601_sp_2_usp_GetEmployeeByDepId.jpg)
 
-ä¾å“¡å·¥ç·¨è™Ÿè®€å–å“¡å·¥è³‡æ–™ï¼šusp\_GetEmployeeByEmpID
+¨Ì­û¤u½s¸¹Åª¨ú­û¤u¸ê®Æ¡Gusp\_GetEmployeeByEmpID
 ===================================
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/601_sp_3_usp_GetEmployeeByEmpID.jpg)
 
-æ–°å¢å“¡å·¥è³‡æ–™ï¼šusp\_PR\_Employee\_Insert
+·s¼W­û¤u¸ê®Æ¡Gusp\_PR\_Employee\_Insert
 ================================
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/601_sp_4_usp_PR_Employee_Insert.jpg)
 
-ç·¨è¼¯å“¡å·¥è³‡æ–™ï¼šusp\_PR\_Employee\_UpdateByPK
+½s¿è­û¤u¸ê®Æ¡Gusp\_PR\_Employee\_UpdateByPK
 ====================================
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/601_sp_5_usp_PR_Employee_UpdateByPK.jpg)
 
-åˆªé™¤å“¡å·¥è³‡æ–™ï¼šusp\_PR\_Employee\_DeleteByPK
+§R°£­û¤u¸ê®Æ¡Gusp\_PR\_Employee\_DeleteByPK
 ====================================
 
 ![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/601_sp_6_usp_PR_Employee_DeleteByPK.jpg)
 
-##åƒè€ƒè³‡æ–™
+##°Ñ¦Ò¸ê®Æ
 ------
 
-*   è·Ÿè‘—å¯¦å‹™å­¸ç¿’ASP.NET MVCï¼šç¬¬ä¸€æ¬¡å¯«MVCå°±ä¸Šæ‰‹(ç¬¬7ç« -ç¯„ä¾‹ç¨‹å¼)[https://www.books.com.tw/products/0010776836](https://www.books.com.tw/products/0010776836)
-*   ASP.NET MVC 4 é–‹ç™¼å¯¦æˆ°(ä¿å“¥)-ç¯„ä¾‹ç¨‹å¼[https://www.delightpress.com.tw/book.aspx?book\_id=SKNP00028](https://www.delightpress.com.tw/book.aspx?book_id=SKNP00028)
-*   mrkt çš„ç¨‹å¼å­¸ç¿’ç­†è¨˜[http://kevintsengtw.blogspot.com/2013/03/entity-framework-stored-procedure.html](http://kevintsengtw.blogspot.com/2013/03/entity-framework-stored-procedure.html)
+*   ¸òµÛ¹ê°È¾Ç²ßASP.NET MVC¡G²Ä¤@¦¸¼gMVC´N¤W¤â(²Ä7³¹-½d¨Òµ{¦¡)[https://www.books.com.tw/products/0010776836](https://www.books.com.tw/products/0010776836)
+*   ASP.NET MVC 4 ¶}µo¹ê¾Ô(«O­ô)-½d¨Òµ{¦¡[https://www.delightpress.com.tw/book.aspx?book\_id=SKNP00028](https://www.delightpress.com.tw/book.aspx?book_id=SKNP00028)
+*   mrkt ªºµ{¦¡¾Ç²ßµ§°O[http://kevintsengtw.blogspot.com/2013/03/entity-framework-stored-procedure.html](http://kevintsengtw.blogspot.com/2013/03/entity-framework-stored-procedure.html)
+
+## ##T-SQL
+
+* 1.table¤Î¸ê®Æ
+    [https://github.com/ismeihchen/ASP.NET-MVC-StoredProcedure/blob/master/prjStoredProcedure/App_Data/1_TableAndData.sql](https://github.com/ismeihchen/ASP.NET-MVC-StoredProcedure/blob/master/prjStoredProcedure/App_Data/1_TableAndData.sql)
+* 2.StoredProcedure(Insert/Update/Delete)
+    [https://github.com/ismeihchen/ASP.NET-MVC-StoredProcedure/blob/master/prjStoredProcedure/App_Data/2_StoredProcedure.sql](https://github.com/ismeihchen/ASP.NET-MVC-StoredProcedure/blob/master/prjStoredProcedure/App_Data/2_StoredProcedure.sql)
