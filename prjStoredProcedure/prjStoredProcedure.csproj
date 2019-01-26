@@ -161,6 +161,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\tDepartment.cs" />
     <Compile Include="Models\tEmployee.cs">
       <DependentUpon>EmployeeModel.tt</DependentUpon>
     </Compile>
