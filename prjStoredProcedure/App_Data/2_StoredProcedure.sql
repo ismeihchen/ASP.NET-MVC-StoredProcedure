@@ -29,7 +29,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
+--讀取所有員工資料
 CREATE PROCEDURE [dbo].[usp_GetAllEmployee]
 AS
 BEGIN
@@ -87,7 +87,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
-
+-- 依員工編號查詢員工資料
 CREATE PROCEDURE [dbo].[usp_GetEmployeeByEmpID]
 (
     @EmployeeId int 
