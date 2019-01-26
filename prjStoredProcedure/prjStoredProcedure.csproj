@@ -112,25 +112,8 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>EmployeeModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Employee2Model.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Employee2Model.edmx</DependentUpon>
-      <LastGenOutput>Employee2Model.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\Employee2Model.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Employee2Model.edmx</DependentUpon>
-      <LastGenOutput>Employee2Model.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\EmployeeModel.edmx.diagram">
       <DependentUpon>EmployeeModel.edmx</DependentUpon>
-    </Content>
-    <EntityDeploy Include="Models\Employee2Model.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Employee2Model.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\Employee2Model.edmx.diagram">
-      <DependentUpon>Employee2Model.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Models\EmployeeModel.Context.tt">
@@ -163,21 +146,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Employee2Model.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Employee2Model.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Employee2Model.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Employee2Model.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Employee2Model.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Employee2Model.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\EmployeeModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -192,9 +160,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EmployeeModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\tDepartment.cs">
-      <DependentUpon>Employee2Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tEmployee.cs">
       <DependentUpon>EmployeeModel.tt</DependentUpon>
