@@ -1,0 +1,215 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="EmployeeModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tDepartment">
+          <Key>
+            <PropertyRef Name="fDepId" />
+          </Key>
+          <Property Name="fDepId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fDepName" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tEmployee">
+          <Key>
+            <PropertyRef Name="fEmpId" />
+          </Key>
+          <Property Name="fEmpId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="fName" Type="nvarchar" MaxLength="30" />
+          <Property Name="fPhone" Type="nvarchar" MaxLength="10" />
+          <Property Name="fDepId" Type="int" />
+        </EntityType>
+        <Function Name="usp_GetAllDepartment" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_GetAllEmployee" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="usp_GetEmployeeByDepId" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fDepId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_GetEmployeeByEmpID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="EmployeeId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_PR_Employee_DeleteByPK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fEmpId" Type="nchar" Mode="In" />
+        </Function>
+        <Function Name="usp_PR_Employee_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fEmpId" Type="int" Mode="InOut" />
+          <Parameter Name="fName" Type="nvarchar" Mode="In" />
+          <Parameter Name="fPhone" Type="nvarchar" Mode="In" />
+          <Parameter Name="fDepId" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_PR_Employee_UpdateByPK" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fEmpId" Type="int" Mode="In" />
+          <Parameter Name="fName" Type="nvarchar" Mode="In" />
+          <Parameter Name="fPhone" Type="nvarchar" Mode="In" />
+          <Parameter Name="fDepId" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="EmployeeModelStoreContainer">
+          <EntitySet Name="tDepartment" EntityType="Self.tDepartment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tEmployee" EntityType="Self.tEmployee" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EmployeeModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tDepartment">
+          <Key>
+            <PropertyRef Name="fDepId" />
+          </Key>
+          <Property Name="fDepId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fDepName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tEmployee">
+          <Key>
+            <PropertyRef Name="fEmpId" />
+          </Key>
+          <Property Name="fEmpId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="fPhone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="fDepId" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="EmployeeEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tDepartment" EntityType="Self.tDepartment" />
+          <EntitySet Name="tEmployee" EntityType="Self.tEmployee" />
+          <FunctionImport Name="usp_GetAllDepartment" ReturnType="Collection(EmployeeModel.usp_GetAllDepartment_Result)" />
+          <FunctionImport Name="usp_GetAllEmployee" ReturnType="Collection(EmployeeModel.usp_GetAllEmployee_Result)" />
+          <FunctionImport Name="usp_GetEmployeeByDepId" ReturnType="Collection(EmployeeModel.usp_GetEmployeeByDepId_Result)">
+            <Parameter Name="fDepId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_GetEmployeeByEmpID" ReturnType="Collection(EmployeeModel.usp_GetEmployeeByEmpID_Result)">
+            <Parameter Name="EmployeeId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_PR_Employee_DeleteByPK">
+            <Parameter Name="fEmpId" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="usp_PR_Employee_Insert">
+            <Parameter Name="fEmpId" Mode="InOut" Type="Int32" />
+            <Parameter Name="fName" Mode="In" Type="String" />
+            <Parameter Name="fPhone" Mode="In" Type="String" />
+            <Parameter Name="fDepId" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_PR_Employee_UpdateByPK">
+            <Parameter Name="fEmpId" Mode="In" Type="Int32" />
+            <Parameter Name="fName" Mode="In" Type="String" />
+            <Parameter Name="fPhone" Mode="In" Type="String" />
+            <Parameter Name="fDepId" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="usp_GetAllDepartment_Result">
+          <Property Type="Int32" Name="fDepId" Nullable="false" />
+          <Property Type="String" Name="fDepName" Nullable="true" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="usp_GetAllEmployee_Result">
+          <Property Type="Int32" Name="fDepId" Nullable="true" />
+          <Property Type="String" Name="fDepName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="fEmpId" Nullable="false" />
+          <Property Type="String" Name="fName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="fPhone" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="usp_GetEmployeeByDepId_Result">
+          <Property Type="Int32" Name="fDepId" Nullable="true" />
+          <Property Type="String" Name="fDepName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="fEmpId" Nullable="false" />
+          <Property Type="String" Name="fName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="fPhone" Nullable="true" MaxLength="10" />
+        </ComplexType>
+        <ComplexType Name="usp_GetEmployeeByEmpID_Result">
+          <Property Type="Int32" Name="fDepId" Nullable="true" />
+          <Property Type="String" Name="fDepName" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="fEmpId" Nullable="false" />
+          <Property Type="String" Name="fName" Nullable="true" MaxLength="30" />
+          <Property Type="String" Name="fPhone" Nullable="true" MaxLength="10" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EmployeeModelStoreContainer" CdmEntityContainer="EmployeeEntities">
+          <EntitySetMapping Name="tDepartment">
+            <EntityTypeMapping TypeName="EmployeeModel.tDepartment">
+              <MappingFragment StoreEntitySet="tDepartment">
+                <ScalarProperty Name="fDepId" ColumnName="fDepId" />
+                <ScalarProperty Name="fDepName" ColumnName="fDepName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tEmployee">
+            <EntityTypeMapping TypeName="EmployeeModel.tEmployee">
+              <MappingFragment StoreEntitySet="tEmployee">
+                <ScalarProperty Name="fEmpId" ColumnName="fEmpId" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="fPhone" ColumnName="fPhone" />
+                <ScalarProperty Name="fDepId" ColumnName="fDepId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetAllDepartment" FunctionName="EmployeeModel.Store.usp_GetAllDepartment">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmployeeModel.usp_GetAllDepartment_Result">
+                <ScalarProperty Name="fDepId" ColumnName="fDepId" />
+                <ScalarProperty Name="fDepName" ColumnName="fDepName" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetAllEmployee" FunctionName="EmployeeModel.Store.usp_GetAllEmployee">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmployeeModel.usp_GetAllEmployee_Result">
+                <ScalarProperty Name="fDepId" ColumnName="fDepId" />
+                <ScalarProperty Name="fDepName" ColumnName="fDepName" />
+                <ScalarProperty Name="fEmpId" ColumnName="fEmpId" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="fPhone" ColumnName="fPhone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetEmployeeByDepId" FunctionName="EmployeeModel.Store.usp_GetEmployeeByDepId">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmployeeModel.usp_GetEmployeeByDepId_Result">
+                <ScalarProperty Name="fDepId" ColumnName="fDepId" />
+                <ScalarProperty Name="fDepName" ColumnName="fDepName" />
+                <ScalarProperty Name="fEmpId" ColumnName="fEmpId" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="fPhone" ColumnName="fPhone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_GetEmployeeByEmpID" FunctionName="EmployeeModel.Store.usp_GetEmployeeByEmpID">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="EmployeeModel.usp_GetEmployeeByEmpID_Result">
+                <ScalarProperty Name="fDepId" ColumnName="fDepId" />
+                <ScalarProperty Name="fDepName" ColumnName="fDepName" />
+                <ScalarProperty Name="fEmpId" ColumnName="fEmpId" />
+                <ScalarProperty Name="fName" ColumnName="fName" />
+                <ScalarProperty Name="fPhone" ColumnName="fPhone" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_PR_Employee_DeleteByPK" FunctionName="EmployeeModel.Store.usp_PR_Employee_DeleteByPK" />
+          <FunctionImportMapping FunctionImportName="usp_PR_Employee_Insert" FunctionName="EmployeeModel.Store.usp_PR_Employee_Insert" />
+          <FunctionImportMapping FunctionImportName="usp_PR_Employee_UpdateByPK" FunctionName="EmployeeModel.Store.usp_PR_Employee_UpdateByPK" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="無" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
