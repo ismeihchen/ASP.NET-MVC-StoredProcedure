@@ -122,11 +122,20 @@ namespace prjStoredProcedure.Controllers
 
         }
 
+        /// <summary>
+        /// 取得部門資料
+        /// </summary>
+        /// <returns></returns>
+        public JsonResult JsonDepartment()
+        {
+            var result = db.usp_GetAllDepartment().ToList();            
+            return Json(result, JsonRequestBehavior.AllowGet);
+        }
+
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
             base.Dispose(disposing);
         }
-
     }
 }
