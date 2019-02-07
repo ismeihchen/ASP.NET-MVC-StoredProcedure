@@ -58,7 +58,7 @@ namespace prjStoredProcedure.Controllers
 
                     //員工編號
                     var EmployeeId = param.Value; 
-                    return RedirectToAction("Index", new { id = employee.fDepId });
+                    return RedirectToAction("Index", new { depId = employee.fDepId });
                 }
                 catch
                 {
@@ -94,7 +94,7 @@ namespace prjStoredProcedure.Controllers
                         employee.fPhone,
                         employee.fDepId);
 
-                    return RedirectToAction("Index", new { id = employee.fDepId });
+                    return RedirectToAction("Index", new { depId = employee.fDepId });
                 }
                 catch
                 {
@@ -118,7 +118,7 @@ namespace prjStoredProcedure.Controllers
                 }
             }
 
-            return RedirectToAction("Index", new { id = fDepId });
+            return RedirectToAction("Index", new { depId = fDepId });
 
         }
 
