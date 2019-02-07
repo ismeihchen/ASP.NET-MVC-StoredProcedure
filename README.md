@@ -51,7 +51,7 @@ MVC Entity Framework 與 Stored Procedure - Insert, Update, Delete綀習
 新增員工資料：usp\_PR\_Employee\_Insert
 ================================
 
-![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/601_sp_4_usp_PR_Employee_Insert.jpg)
+![](https://raw.githubusercontent.com/ismeihchen/Image/master/Image/Images/StoredProcedure/601_sp_4_usp_PR_Employee_Insert2.jpg)
 
 編輯員工資料：usp\_PR\_Employee\_UpdateByPK
 ====================================
